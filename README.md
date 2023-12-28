@@ -1,7 +1,25 @@
-#### LIVE LINK : [Click Here]()
-#### DEMO VIDEO : [Click Here]()
+#### LIVE LINK : [Click Here](https://zevi-react-assignment-app-rj.netlify.app)
 
----
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <h1 align="center">Zevi React Assignment App ✨</h1>
+
+  <p align="center">
+    The app is a simplified search app with following requirements: 
+        Click on the search tab latest trend suggestion box open 
+        Implement faker api for showing data. 
+        According to the filter data should update. 
+        Click on the Wishlist colour should change to red 
+        On hovering to the product view product button should be visible.
+ Site URL / Demo: 
+     <a href="https://zevi-react-assignment-app-rj.netlify.app">Zevi React Assignment App</a>
+   
+  </p>
+</p>
+
+[![Site preview](/src/assets/png/scr1.png)](https://zevi-react-assignment-app-rj.netlify.app)
+
 
 # Getting Started with Create React App
 
