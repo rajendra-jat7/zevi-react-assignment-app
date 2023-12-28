@@ -1,26 +1,62 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react';
 
-function App() {
+import SearchBoxCard from './components/SearchBoxCard/SearchBoxCard';
+import SearchResultsSection from
+  './components/SearchResultsSection/SearchResultsSection';
+
+import {TrendDataType, TrendsData, SuggestionData,
+  ProductData, ProductType} from './fakerData';
+import SearchSVG from './assets/svg/magnifying-glass-solid.svg';
+import AppLogo from './components/AppLogo/AppLogo';
+import './App.scss';
+
+/**
+ * The main <App> component of our application.
+ * @return {JsxElement}
+ */
+const App : React.FunctionComponent = () => {
+  const [trendsData, setTrendsData] = useState<TrendDataType[]>([]);
+  const [suggestionData, setSuggestionData] = useState<string[]>([]);
+  const [productData, setProductData] = useState<ProductType[]>([]);
+
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [showResults, setShowResults] = useState<boolean>(false);
+  const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
+
+  useEffect(() => {
+    setTrendsData(TrendsData);
+    setSuggestionData(SuggestionData);
+    setProductData(ProductData);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <AppLogo/>
+
+      {/* The SearchBox component */}
+      <div onClick={() => setShowSuggestions(!showSuggestions)} className='search-box-container'>
+        <input placeholder='Search' value={searchQuery}
+          onChange={(e) => setSearchQuery(e.currentTarget.value)} autoFocus/>
+        <button onClick= {() => setShowResults(!showResults)}>
+          <img src={SearchSVG} alt='search'/>
+        </button>
+      </div>
+      <div>
+        {
+          showResults ?
+          <SearchResultsSection
+            productData={productData}
+            searchQuery={searchQuery}/> :
+          (searchQuery.length !== 0 || showSuggestions) ?
+          <SearchBoxCard
+            trendsData={trendsData} suggestionData={suggestionData}
+            setSearchQuery={setSearchQuery}
+          /> : null
+        }
+      </div>
+
     </div>
   );
-}
+};
 
 export default App;
