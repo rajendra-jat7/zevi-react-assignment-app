@@ -7,11 +7,17 @@
 
   <p align="center">
     The app is a simplified search app with following requirements: 
-        Click on the search tab latest trend suggestion box open 
-        Implement faker api for showing data. 
-        According to the filter data should update. 
-        Click on the Wishlist colour should change to red 
-        On hovering to the product view product button should be visible.
+    <br />
+       - Click on the search tab latest trend suggestion box open 
+        <br />
+       - Implement faker api for showing data.
+        <br /> 
+       - According to the filter data should update.
+        <br /> 
+       - Click on the Wishlist colour should change to red 
+        <br />
+       - On hovering to the product view product button should be visible.
+        <br />
  Site URL / Demo: 
      <a href="https://zevi-react-assignment-app-rj.netlify.app">Zevi React Assignment App</a>
    
@@ -19,6 +25,18 @@
 </p>
 
 [![Site preview](/src/assets/png/scr1.png)](https://zevi-react-assignment-app-rj.netlify.app)
+[![Site preview](/src/assets/png/scr2.png)](https://zevi-react-assignment-app-rj.netlify.app)
+[![Site preview](/src/assets/png/scr3.png)](https://zevi-react-assignment-app-rj.netlify.app)
+
+
+## Technology Stack 🛠️
+
+Dependencies defined in package.json:
+
+[Reactjs](https://reactjs.org/)
+| [TypeScript](https://www.typescriptlang.org/)
+| [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+| [SASS](https://sass-lang.com/)
 
 
 # Getting Started with Create React App
